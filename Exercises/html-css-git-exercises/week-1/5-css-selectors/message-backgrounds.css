@@ -3,8 +3,8 @@
   background-color: red;
 }
 article {
-  background-color: "cadetblue";
+  background-color: yellow;
 }
-.message__author {
-  background-color: "yellow";
+.message--latest {
+  background-color: cadetblue;
 }
