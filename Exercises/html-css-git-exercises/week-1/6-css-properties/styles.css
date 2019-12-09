@@ -1,5 +1,17 @@
 /* Add your CSS code below */
-.link {
+.a {
   color: red;
   font-weight: bold;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+.message__author {
+  border-left: 5px;
+}
+
+.message__author {
+  opacity: 50%;
+}
+.messages {
+  line-height: 1.3em;
 }
