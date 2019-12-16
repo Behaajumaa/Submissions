@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <script src="Step_5.js"></script>
         <title>Step 5</title>
         <meta charset="UTF-8">
     </head>
@@ -8,7 +9,20 @@
         <form>
             <label for="first_number">first number : </label><input type="text" id="first_number" name="first_number"/><br/>
             <label for="second_number">second number : </label><input type="text" id="second_number" name="second_number"/><br/>
-            <button  id="validate" name ="validate">validate</button>
+            <button  name="validate" id="validate" onclick="mult()">Validate</button>
         </form>
+       
     </body>
+  <!--   <script>
+        function mult(){
+    var x = document.getElementById('first_number').value;
+    var y = document.getElementById('second_number').value;
+    console.log(x, y)
+    var mul =x*y;
+
+  alert (x+"*"+y+"="+mul);
+  
+}
+
+    </script> -->
 </html>
