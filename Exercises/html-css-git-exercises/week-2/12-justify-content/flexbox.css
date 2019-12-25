@@ -1,9 +1,11 @@
 .countries {
   display: flex;
+  justify-content: space-around;
 }
 
 .countries--second .country {
   padding: 0.5em;
+  
 }
 
 /* Add your own CSS code below */
