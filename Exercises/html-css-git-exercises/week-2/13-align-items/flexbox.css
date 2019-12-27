@@ -4,11 +4,42 @@
 /* Add your own CSS code below */
 .countries--first{
   flex-direction: row;
-  align-items: center;
+  align-items: center;    
+  height: 500px;
+  width: 80%;
+  background-color: rgb(53, 53, 48);
 }
 
 
 .countries--second{
+  flex-direction: row-reverse;
+  height: 500px;
+  width: 80%;
+  background-color: rgb(53, 53, 48);
+  align-items: flex-end;
+}
+.countries--third{
+  background-color: rgb(53, 53, 48);
+  height: 500px;
+  width: 80%;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.countries--fourth{
+  height: 500px;
+  width: 80%;
   flex-direction: column;
   align-items: center;
+  background-color: rgb(53, 53, 48);
+
+}
+
+.country{
+  padding: 10px;
+  background-color: rgb(235, 235, 245);
+  border: gray 1px solid;
+  width: 17%;
+  height: 44px;
+  text-align: center;
+  list-style: none;
 }
