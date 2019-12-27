@@ -1,12 +1,29 @@
 /* Add your own CSS code below */
- .countries{
-    display: flex;
+  .countries--first{
+  flex-direction: row-reverse;
+  display: flex;
+   margin-right: 24%;
    }
-
+   .countries--second{
+      flex-direction: column;
+      display: flex;
+       margin-right: 24%;
+   }
+   
+   .countries--third{
+         flex-direction: column-reverse;
+         display: flex;
+          margin-right: 24%;
+   }
    
 .country{
    background-color: rgb(235, 227, 227);
    padding: 2%;
-   border-right:  solid black 1px;
+   border: rgb(184, 178, 178) solid 1px;
+   width:10%;
+   list-style-type: none;
+   text-align: center;
 
 }
+
+
