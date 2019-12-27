@@ -3,3 +3,64 @@
 }
 
 /* Add your own CSS code below */
+.country{
+  padding: 10px;
+  background-color: rgb(235, 235, 245);
+  border: gray 1px solid;
+  width: 17%;
+  height: 44px;
+  text-align: center;
+  list-style: none;
+}
+.countries--tall{
+  height: 444px;
+  width: 80%;
+  background-color: rgb(141, 140, 135);
+}
+
+
+
+.countries--second{
+align-items: center;
+
+}
+/* .parent-class > .child-class */
+.countries--second > .country--ethiopia{
+  align-self: flex-end;
+}
+
+.countries--first > .country{
+height: 400px;
+align-self: flex-end;
+
+}
+.countries--first > .country--ethiopia{
+  height: 50px;
+}
+
+.countries--third{
+  align-items: center;
+  
+  }
+  /* .parent-class > .child-class */
+  .countries--third  .country{
+    align-self: flex-end;
+  }
+
+.countries--third> .country--brazil{
+  align-self: flex-start;
+
+}
+.countries--third> .country--uganda{
+  align-self: flex-start;
+
+}
+
+.countries--fourth{
+  flex-direction: column;
+}
+
+.countries--fourth> .country--uganda{
+  align-self: center;
+
+}
