@@ -1,1 +1,69 @@
 /* Write your media queries and flexbox CSS below */
+
+body{
+    background-color: rgb(56, 69, 82);
+}
+.site-wrapper{
+    padding: 8%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif  ;
+}
+.site-header__navItem--highlighted{
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(241, 98, 122);
+}
+.site-header__checkout{
+    background-color: rgb(43, 142, 175);
+    border-radius: 4px;
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+}
+.site-header{
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    padding: 8%;
+}
+.site-header__navItem{
+    padding: 10%;
+    
+}
+@media only screen and (min-width : 480px){
+
+.site-header__nav{
+    display: flex;
+}
+}
+
+@media only screen and (min-width : 700px){
+
+    .site-header{
+        display: flex;
+        flex-direction: row ;
+        align-items: center;
+        
+    }
+    }
+    
+
+    @media only screen and (min-width : 700px){
+
+        .site-header{
+            justify-content: space-between;
+            
+        }
+        }
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
