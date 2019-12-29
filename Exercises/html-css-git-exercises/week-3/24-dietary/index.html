@@ -20,9 +20,41 @@
 
         <form>
           <!-- Your multiple choice goes here -->
-          <button type="submit">Submit</button>
+          <fieldset style="display: flex;flex-direction: column;" >
+            <legend>Please select all of your dietary requirements</legend>
+           
+            <label  >
+                <input type="checkbox" name="Halal"/>
+                Halal
+            </label>
+
+            <label>
+              <input type="checkbox" name="Kosher"/>
+              Kosher
+            </label>
+
+            <label>
+              <input type="checkbox" name="Vegetarian"/>
+              Vegetarian
+            </label>
+
+            <label>
+              <input type="checkbox" name="Vegan"/>
+              Vegan
+            </label>
+            
+            <label>
+              <input type="checkbox" name=" Gluten Free"/>
+              Gluten Free
+            </label>
+              
+        </fieldset>
+          <br>
+          <button type="submit" style="background-color: rgb(86, 131, 226); border: solid 1px ; color: beige;">Submit</button>
         </form>
       </main>
     </div>
   </body>
 </html>
+
+<!-- style="display: flex;flex-direction: column;" -->
