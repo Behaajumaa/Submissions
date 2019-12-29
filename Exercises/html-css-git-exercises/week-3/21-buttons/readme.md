@@ -8,3 +8,4 @@ In this exercise, you will add a submit button to the search form. Follow the st
 2. In the `<button>` element, add the text `Search`.
 
 If you have done this correctly, you should see a "Search" button at the bottom of the form. When you click the button, it should complete the search on Google.
+
