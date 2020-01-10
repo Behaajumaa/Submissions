@@ -19,6 +19,11 @@ body, html { overflow-x: hidden; }
     background-color: #fff; /* change if the mask should have another color then white */
     z-index: 99; /* makes sure it stays on top */
 }
+#marginfix {
+
+	margin-top: -1500px;
+  }
+
 
 #status {
     width: 200px;
