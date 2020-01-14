@@ -5,6 +5,7 @@ import clear from "./img/weather-icons/clear.svg";
 import Search from "./search"
 import CurrentWeather from "./currentWeather";
 import DuringDay from "./duringDay";
+import FakeWeather from "./data/FakeWeather.json";
 
 
 class App extends Component {
