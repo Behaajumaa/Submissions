@@ -1,122 +1,58 @@
-.app{
-font-family: "Raleway";
-
-}
-
-.header{
-  background-color: #759eda;
-  height: 70px;
-  display:flex;
-  align-items: center;  
-  padding: 0 10px;
-}
-
-.main{
-  display:flex;
-  justify-content: space-around;
-  background-color: #9ccef4;
-}
-
-
-.footer{
-  background-color: #9ccef4;
-  height: 230px;
-  border: solid 1px black;
-  display: flex;
-
-}
-
-
-.ButtonFindWeathe{
-
-background-color: #5879c7;
-height: 40px;
-font-size: 15px;
-border-width: 0;
-
-}
-
-.inputCity{
-  border-width: 0;
-  background-color: #759eda;
-  color:white;
-  width:30%;
-  font-size: 20px;
-  ;
-  
-}
-
-
-.imge{
-
-width:180px;
-height:180px;
-}
-
-.app{
-font-family: "Raleway";
-
-}
-
-.header{
-  background-color: #759eda;
-  height: 80px;
-  display:flex;
-  align-items: center;  
-  padding: 0 10px;
-}
-
-.main{
-  display:flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #9ccef4;
-}
-
-
-.footer{
-  background-color: #9ccef4;
-  height: 185px;
-  border: solid 0px;
-  display: flex;
-  justify-content: space-around;
-
-}
-
-
-.ButtonFindWeathe{
-
-background-color: #5879c7;
-height: 40px;
-font-size: 15px;
-border-width: 0;
-
-}
-
-.inputCity{
-  border-width: 0;
-  background-color: #759eda;
-  color:white;
-  width:30%;
-  font-size: 20px;
-  ;
-  
-}
-
-.imge{
-  height: 180px;
-  width:  180px;
-}
-
-.smallimg{
-
-  width:  70px;
-  height: 70px;
-  text-align: center;
-}
-
-.pElaments{
-color:white;
-font-weight: bold;
-
-}
+app {
+    font-family: "Raleway", sans-serif;
+  }
+  .header {
+    background-color: #7b88dc;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+  }
+  .main {
+    background-color: #9cc2f7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer {
+    background-color: #9cc2f7;
+    display: flex;
+    height: 230px;
+    justify-content: space-around;
+  }
+  .ButtonFindWeathe {
+    background-color: #5879c7;
+    height: 40px;
+    font-size: 15px;
+    border-width: 0;
+  }
+  .inputcity {
+    background-color: #7b88dc;
+    border-width: 0;
+    color: white;
+    width: 30%;
+  }
+  .imge {
+    width: 180px;
+    height: 180px;
+  }
+  .small {
+    width: 70px;
+    text-align: center;
+  }
+  .first {
+    color: white;
+    font-weight: bold;
+  }
+  @media (max-width:480px) {
+    .footer {
+        height: 1300px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .inputcity {
+        font-size: 10px;
+        ;
+    }
+  }
