@@ -41,6 +41,7 @@ class App extends Component {
     const data = await response.json();
 
    console.log(data);
+    if (data.cod==="200"){
   
     this.setState({
       img:       data.list[0].weather[0].main, 
@@ -73,7 +74,12 @@ class App extends Component {
       error:""
 
     });  
+
+  } //ifclose 
+  else {
+  alert("City not found ");
   }
+}
 
   render() {
     return (
