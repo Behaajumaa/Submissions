@@ -3,11 +3,11 @@ import React from "react";
 export default function Search(props) {
   console.log(props);
   return (
-    <div className="header">
+    <form className="header" onSubmit={props.getWeather}>
 
-          <input type="text" placeholder="Type in a city name" className="inputcity" value={props.city}></input>
+          <input type="text"  name="city" placeholder="Type in a city name" className="inputcity" value={props.city}></input>
           <button className="ButtonFindWeathe">FindWeather</button>
-     </div>
+     </form>
   );
 }
 
