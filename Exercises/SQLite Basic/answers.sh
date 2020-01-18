@@ -1,6 +1,4 @@
 Basic Queries 
- Decrease the points of Alex because hes late today 8. Remember to update answers.sh file 9. Commit ("Basic Queries") 🔑🔑🔑
-
 
 
 Problem 1: Get all the names of students in the database 
