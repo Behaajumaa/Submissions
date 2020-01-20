@@ -16,8 +16,6 @@ function startApp(name){
   console.log(`Welcome to ${name}'s application!`)
   console.log("--------------------")
 }
-
-
 /**
  * Decides what to do depending on the data that was received
  * This function receives the input sent by the user.
@@ -34,20 +32,26 @@ function startApp(name){
  * @returns {void}
  */
 function onDataReceived(text) {
+
+
   if (text === 'quit\n' || text ==='exit\n' ) {
     quit();
   }
   else if(text === 'hello\n'){
-    hello();
+    hello(text);
   }else if(text === 'help\n'){
     help();
   }
+// I added the below
+  else if(text.substring(0,5) === 'hello'){
+    hello(text); 
+  }
+
+// I added the above
   else{
     unknownCommand(text);
   }
 }
-
-
 
 /**
  * prints "unknown command"
@@ -60,17 +64,16 @@ function unknownCommand(c){
   console.log('unknown command: "'+c.trim()+'"')
 }
 
-
 /**
  * Says hello
- *
+ *@param  {string}
  * @returns {void}
  */
-function hello(){
-  console.log('hello!')
+function hello(text){
+  console.log(text)
+  var Newtext = text.substring(5,text.length-1); 
+  console.log('hello'+Newtext+'!')
 }
-
-
 /**
  * Exits the application
  *
@@ -88,12 +91,8 @@ function quit(){
  */
 
 function help() {
-    console.log(' \n\nYou can inter these commands \n  exit\n  quit\n  help \n  hello' )
+    console.log(' \n\nYou can inter these commands \n  exit\n  quit\n  help \n  hello or any text start with hello word ' )
   
   }
-
-
-
-
 // The following line starts the application
 startApp("Behaa Jumaa ")
