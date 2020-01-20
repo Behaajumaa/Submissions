@@ -9,7 +9,7 @@
  * @param  {string} name the name of the app
  * @returns {void}
  */
-function startApp(name){
+function startApp(name) {
   process.stdin.resume();
   process.stdin.setEncoding('utf8');
   process.stdin.on('data', onDataReceived);
@@ -34,27 +34,31 @@ function startApp(name){
 function onDataReceived(text) {
 
 
-  if (text === 'quit\n' || text ==='exit\n' ) {
+  if (text === 'quit\n' || text === 'exit\n') {
     quit();
   }
-  else if(text === 'hello\n'){
+  else if (text === 'hello\n') {
     hello(text);
-  }else if(text === 'help\n'){
+  } else if (text === 'help\n') {
     help();
   }
-// I added the below
-  else if(text.substring(0,5) === 'hello'){
-    hello(text); 
+  // I added the below
+  else if (text.substring(0, 5) === 'hello') {
+    hello(text);
   }// I added the above
-  else if(text === 'list\n'){
+  else if (text === 'list\n') {
     list();
   }
 
-  else if(text.substring(0,3) === 'add'){//Here I divid the string 'add blabal'to  just  add 
-    add(text.substring(4,text.length)); //useing the blabla here :) 
+  else if (text.substring(0, 3) === 'add') {//Here I divid the string 'add blabal'to  just  add 
+    add(text.substring(4, text.length)); //useing the blabla here :) 
   }
 
-  else{
+  else if (text.substring(0, 6) === 'remove') {//Here I divid the string 'remove number'to  just  remove 
+    remove(text.substring(6, text.length-1)); //useing the number here :) 
+  }
+
+  else {
     unknownCommand(text);
   }
 }
@@ -66,8 +70,8 @@ function onDataReceived(text) {
  * @param  {string} c the text received
  * @returns {void}
  */
-function unknownCommand(c){
-  console.log('unknown command: "'+c.trim()+'"')
+function unknownCommand(c) {
+  console.log('unknown command: "' + c.trim() + '"')
 }
 
 /**
@@ -75,17 +79,17 @@ function unknownCommand(c){
  *@param  {string}
  * @returns {void}
  */
-function hello(text){
+function hello(text) {
   console.log(text)
-  var Newtext = text.substring(5,text.length-1); 
-  console.log('hello'+Newtext+'!')
+  var Newtext = text.substring(5, text.length-1);
+  console.log('hello' + Newtext + '!')
 }
 /**
  * Exits the application
  *
  * @returns {void}
  */
-function quit(){
+function quit() {
   console.log('Quitting now, goodbye!')
   process.exit();
 }
@@ -97,30 +101,59 @@ function quit(){
  */
 
 function help() {
-    console.log(' \n\nYou can inter these commands \n  exit\n  quit\n  help \n  hello or any text start with hello word ' )
-  }
+  console.log(' \n\nYou can inter these commands \n  exit\n  quit\n  help \n  hello or any text start with hello word ')
+}
 
 // list function list all tasks in the App
-let listOFTasks = ["exit", "quit", "help","hello","list","hello and any string after it "]; 
+let listOFTasks = ["exit", "quit", "help", "hello", "list", "hello and any string after it "];
 
-  function list (){
-    console.log("\nThe list of tasks you can use them in this App are:")
+function list() {
+  console.log("\nThe list of tasks you can use them in this App are:")
 
-      for (let i =1;i<listOFTasks.length;i++)
-      console.log(i+'.'+listOFTasks[i])
-  }
-  // add function add   a new task into the list of tasks and display the new list 
-  function add (x){
-    if (x.length<1)
+  for (let i = 1; i < listOFTasks.length; i++)
+    console.log(i + '.' + listOFTasks[i])
+}
+// add function add   a new task into the list of tasks and display the new list 
+function add(x) {
+  if (x.length < 1)
     console.log("Error: YOU SHOULD ADD SOME THING")
-    else if (x.length>0){
-    listOFTasks.push(x) ;
-    console.log("\nThe list of tasks after add "+x+"is:")
-    for (let i =1;i<listOFTasks.length;i++)
-    console.log(i+'.'+listOFTasks[i])
-    }
-
+  else if (x.length > 0) {
+    listOFTasks.push(x);
+    console.log("\nThe list of tasks after add " + x + "is:")
+    for (let i = 1; i < listOFTasks.length; i++)
+      console.log(i + '.' + listOFTasks[i])
   }
+
+}
+
+// add function add   a new task into the list of tasks and display the new list 
+function remove(x) {
+
+  console.log("\nThe list of tasks before remove is:")
+  for (let i = 1; i < listOFTasks.length; i++) {
+    console.log(i + '.' + listOFTasks[i-1])
+  }
+
+  if (x == 1) {
+    listOFTasks.splice(0, 1);
+    console.log("\nThe list of tasks after remove first emement is:")
+    for (let i = 1; i < listOFTasks.length; i++)
+      console.log(i + '.' + listOFTasks[i-1])
+  }
+  else if (x == 2) {
+    listOFTasks.splice(1, 1);
+    console.log("\nThe list of tasks after remove second emement is:")
+    for (let i = 1; i < listOFTasks.length; i++)
+      console.log(i + '.' + listOFTasks[i-1])
+  }
+  else if (x == 0) {
+    console.log(listOFTasks.pop());
+    console.log("\nThe list of tasks after remove last emement is:")
+    for (let i = 1; i < listOFTasks.length; i++)
+      console.log(i + '.' + listOFTasks[i])
+  }
+
+}
 
 
 
