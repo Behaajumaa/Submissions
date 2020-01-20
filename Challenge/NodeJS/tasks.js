@@ -50,6 +50,10 @@ function onDataReceived(text) {
     list();
   }
 
+  else if(text.substring(0,3) === 'add'){//Here I divid the string 'add blabal'to  just  add 
+    add(text.substring(4,text.length)); //useing the blabla here :) 
+  }
+
   else{
     unknownCommand(text);
   }
@@ -96,13 +100,29 @@ function help() {
     console.log(' \n\nYou can inter these commands \n  exit\n  quit\n  help \n  hello or any text start with hello word ' )
   }
 
+// list function list all tasks in the App
+let listOFTasks = ["exit", "quit", "help","hello","list","hello and any string after it "]; 
 
   function list (){
-    let listOFTasks = ["exit", "quit", "help","hello","list","hello and any string after it "]; 
     console.log("\nThe list of tasks you can use them in this App are:")
 
       for (let i =1;i<listOFTasks.length;i++)
       console.log(i+'.'+listOFTasks[i])
   }
+  // add function add   a new task into the list of tasks and display the new list 
+  function add (x){
+    if (x.length<1)
+    console.log("Error: YOU SHOULD ADD SOME THING")
+    else if (x.length>0){
+    listOFTasks.push(x) ;
+    console.log("\nThe list of tasks after add "+x+"is:")
+    for (let i =1;i<listOFTasks.length;i++)
+    console.log(i+'.'+listOFTasks[i])
+    }
+
+  }
+
+
+
 // The following line starts the application
 startApp("Behaa Jumaa ")
