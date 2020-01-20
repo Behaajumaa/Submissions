@@ -45,9 +45,11 @@ function onDataReceived(text) {
 // I added the below
   else if(text.substring(0,5) === 'hello'){
     hello(text); 
+  }// I added the above
+  else if(text === 'list\n'){
+    list();
   }
 
-// I added the above
   else{
     unknownCommand(text);
   }
@@ -92,7 +94,15 @@ function quit(){
 
 function help() {
     console.log(' \n\nYou can inter these commands \n  exit\n  quit\n  help \n  hello or any text start with hello word ' )
-  
+  }
+
+
+  function list (){
+    let listOFTasks = ["exit", "quit", "help","hello","list","hello and any string after it "]; 
+    console.log("\nThe list of tasks you can use them in this App are:")
+
+      for (let i =1;i<listOFTasks.length;i++)
+      console.log(i+'.'+listOFTasks[i])
   }
 // The following line starts the application
 startApp("Behaa Jumaa ")
