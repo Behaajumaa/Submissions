@@ -130,30 +130,30 @@ function add(x) {
 function remove(x) {
 
   console.log("\nThe list of tasks before remove is:")
-  for (let i = 1; i < listOFTasks.length; i++) {
-    console.log(i + '.' + listOFTasks[i-1])
+  for (let i = 0; i < listOFTasks.length; i++) {
+    console.log(i+1 + '.' + listOFTasks[i])
   }
 
-  if (x == 1) {
-    listOFTasks.splice(0, 1);
-    console.log("\nThe list of tasks after remove first emement is:")
-    for (let i = 1; i < listOFTasks.length; i++)
-      console.log(i + '.' + listOFTasks[i-1])
-  }
-  else if (x == 2) {
-    listOFTasks.splice(1, 1);
-    console.log("\nThe list of tasks after remove second emement is:")
-    for (let i = 1; i < listOFTasks.length; i++)
-      console.log(i + '.' + listOFTasks[i-1])
-  }
-  else if (x == 0) {
+ if (x == 0) {
     console.log(listOFTasks.pop());
     console.log("\nThe list of tasks after remove last emement is:")
     for (let i = 1; i < listOFTasks.length; i++)
       console.log(i + '.' + listOFTasks[i])
   }
 
-}
+  else if (x<0 || x > listOFTasks.length){
+    console.log("\n   ERROR:Can not remove element does not exist !!\n\t You enter a number that does not exist")
+  }
+
+  else {
+        listOFTasks.splice(x-1, 1);
+        console.log("\nThe list of tasks after remove emement by index is:")
+        for (let i = 1; i < listOFTasks.length; i++)
+            console.log(i + '.' + listOFTasks[i])
+  }  
+
+}// end of remove function
+
 
 
 
