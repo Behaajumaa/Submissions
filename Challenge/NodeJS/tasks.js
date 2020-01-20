@@ -83,7 +83,7 @@ function quit(){
 
 /**
  * Help the application
- *
+ *its return what commands you can inter 
  * @returns {string}
  */
 
