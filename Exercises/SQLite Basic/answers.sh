@@ -74,5 +74,9 @@ SELECT employees.Name , companies.Date
 from employees ,companies
 WHERE companies.Date<2000 and companies.Name=employees.Company
 
+#Find the name of company that has a graphic designer.
+
+SELECT Role from employees ;
+where Company = Graphic Designer
 
 
