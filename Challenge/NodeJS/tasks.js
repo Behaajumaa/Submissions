@@ -39,11 +39,14 @@ function onDataReceived(text) {
   }
   else if(text === 'hello\n'){
     hello();
+  }else if(text === 'help\n'){
+    help();
   }
   else{
     unknownCommand(text);
   }
 }
+
 
 
 /**
@@ -77,6 +80,20 @@ function quit(){
   console.log('Quitting now, goodbye!')
   process.exit();
 }
+
+/**
+ * Help the application
+ *
+ * @returns {string}
+ */
+
+function help() {
+    console.log(' \n\nYou can inter these commands \n  exit\n  quit\n  help \n  hello' )
+  
+  }
+
+
+
 
 // The following line starts the application
 startApp("Behaa Jumaa ")
