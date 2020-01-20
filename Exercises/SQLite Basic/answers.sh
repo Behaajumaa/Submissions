@@ -80,3 +80,36 @@ SELECT Role from employees ;
 where Company = Graphic Designer
 
 
+#Count & Filter __________________________________________________
+
+#Find the person with the highest number of points in students
+SELECT MAX(Points) ,name FROM students;
+
+#Find the average of points in students
+
+SELECT AVG(Points)
+FROM students
+
+
+#Find the number of students that have 500 points
+
+SELECT COUNT(name)
+FROM students
+WHERE Points>500; 
+
+#Find the names of students that contains 's'
+SELECT * FROM students
+WHERE name LIKE '%s%';
+
+#Find all students based on the decreasing order of their points
+SELECT
+   name
+FROM
+   students
+ORDER BY
+    Points DESC;
+
+
+
+    # POINTS LIST in student table not exacty right because i had a mistake where i insert same number to all of them some where :) 
+    
