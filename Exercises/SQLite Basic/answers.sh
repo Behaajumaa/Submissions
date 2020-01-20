@@ -33,7 +33,7 @@ WHERE id==2;
 
 # Creating Table
 
-# CREATE TABLE graduates (
+
    ID INTEGER PRIMARY KEY,
    name TEXT NOT NULL,
    age INTEGER,
@@ -59,3 +59,20 @@ WHERE id==1;
 # Remove Layal's record from students
 
 DELETE FROM students WHERE name='Layal';
+
+#Joins__________________________________
+
+#Produce a table that contains, for each employee, his/her name, company name, and company date.
+
+SELECT e.Name as empName ,e.Company as compName, c.Date as comDate
+from employees as e ,companies as c
+WHERE e.Company = c.Name
+
+#Find the name of employees that work in companies made before 2000.
+
+SELECT employees.Name , companies.Date 
+from employees ,companies
+WHERE companies.Date<2000 and companies.Name=employees.Company
+
+
+
