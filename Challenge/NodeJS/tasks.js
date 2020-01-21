@@ -62,6 +62,13 @@ function onDataReceived(text) {
     edit(text.substring(5, text.length-1)); //useing the number and 'new text' here :) 
   }
 
+  else if (text.substring(0, 5) === 'check') {
+    check(text.substring(5, text.length-1)); //useing the number and 'new text' here :) 
+  }
+  else if (text.substring(0, 7) === 'uncheck') {
+    uncheck(text.substring(7, text.length-1)); //useing the number and 'new text' here :) 
+  }
+
   else {
     unknownCommand(text);
   }
@@ -102,8 +109,8 @@ function quit() {
  * Help the application
  *its return what commands you can inter 
  * @returns {string}
- */
-let listOFTasks = ["exit", "quit", "help", "hello", "list","add","remove","edit", "hello and any string after it "];
+ */ 
+let listOFTasks = ["exit", "quit", "help", "hello", "list","add","remove","edit","check","uncheck", "hello and any string after it "];
 let undone = '';  let done = '✓';
 
 
@@ -111,16 +118,26 @@ let undone = '';  let done = '✓';
 function help() {
   console.log(' \n\nYou can inter these commands \n')
 
-  for (let i = 1; i < listOFTasks.length; i++)
-  console.log(i + '. [ '+done+' ]' +''+ listOFTasks[i])
-}
+  for (let i = 0; i < listOFTasks.length; i++){
 
+  if (listOFTasks[i]==="check")
+  console.log(i + '. [ '+undone+' ]' +''+ listOFTasks[i]+":  which let you know if this task is done  ")
+  
+  else if (listOFTasks[i]==="uncheck")
+  console.log(i + '. [ '+undone+' ]' +''+ listOFTasks[i]+":  which let you know if this task isn't done  ")
+
+  else 
+  console.log(i + '. [ '+undone+' ]' +''+ listOFTasks[i])
+
+  
+}
+}
 // list function list all tasks in the App
 function list() {
   console.log("\nThe list of tasks you can use them in this App are:")
 
   for (let i = 1; i < listOFTasks.length; i++)
-  console.log(i + '. [ '+done+' ]' +''+ listOFTasks[i])
+  console.log(i + '. [ '+undone+' ]' +''+ listOFTasks[i])
 
 }
 // add function add   a new task into the list of tasks and display the new list 
@@ -131,7 +148,7 @@ function add(x) {
     listOFTasks.push(x);
     console.log("\nThe list of tasks after add " + x + "is:")
     for (let i = 1; i < listOFTasks.length; i++)
-    console.log(i + '. [ '+done+' ]' +''+ listOFTasks[i])
+    console.log(i + '. [ '+undone+' ]' +''+ listOFTasks[i])
   }
 
 }
@@ -141,14 +158,14 @@ function remove(x) {
 
   console.log("\nThe list of tasks before remove is:")
   for (let i = 0; i < listOFTasks.length; i++) {
-    console.log(i + '. [ '+done+' ]' +''+ listOFTasks[i])
+    console.log(i + '. [ '+undone+' ]' +''+ listOFTasks[i])
   }
 
  if (x == 0) {
     console.log(listOFTasks.pop());
     console.log("\nThe list of tasks after remove last emement is:")
     for (let i = 1; i < listOFTasks.length; i++)
-    console.log(i + '. [ '+done+' ]' +''+ listOFTasks[i])
+    console.log(i + '. [ '+undone+' ]' +''+ listOFTasks[i])
   }
 
   else if (x<0 || x > listOFTasks.length){
@@ -159,7 +176,7 @@ function remove(x) {
         listOFTasks.splice(x-1, 1);
         console.log("\nThe list of tasks after remove emement by index is:")
         for (let i = 1; i < listOFTasks.length; i++)
-        console.log(i + '. [ '+done+' ]' +''+ listOFTasks[i])
+        console.log(i + '. [ '+undone+' ]' +''+ listOFTasks[i])
       }  
 
 }// end of remove function
@@ -175,17 +192,61 @@ function edit(x) {
     listOFTasks[listOFTasks.length-1]="new text";
     console.log("\nThe list of tasks after add " + x + "is:")
     for (let i = 1; i < listOFTasks.length; i++)
-    console.log(i + '. [ '+done+' ]' +''+ listOFTasks[i])
+    console.log(i + '. [ '+undone+' ]' +''+ listOFTasks[i])
   }
   else if (x == "1 new text" ) {
     listOFTasks[0]="new text";
     console.log("\nThe list of tasks after add " + x + "is:")
     for (let i = 1; i < listOFTasks.length; i++)
-    console.log(i + '. [ '+done+' ]' +''+ listOFTasks[i])
+    console.log(i + '. [ '+undone+' ]' +''+ listOFTasks[i])
 
   }
 
 }// end of edit function
+
+
+function check(x) {
+
+  if (x.length ==0){
+    console.log(x)
+    console.log("Error: YOU SHOULD ADD check plus number ")
+  }
+
+  else if (x >= 1 ) {
+    for (let i = 1; i < listOFTasks.length; i++)
+    if (x==i)
+    console.log(i + '. ['+done+' ]' +''+ listOFTasks[i])
+    else
+    console.log(i + '. [ '+undone+' ]' +''+ listOFTasks[i])
+
+  }
+
+}// end of check function
+
+function uncheck(x) {
+
+  if (x.length ==0){
+    console.log(x)
+    console.log("Error: YOU SHOULD ADD Uncheck plus number ")
+  }
+
+  else if (x >= 1 ) {
+    for (let i = 1; i < listOFTasks.length; i++)
+    if (x==i)
+    console.log(i + '. [ '+undone+' ]' +''+ listOFTasks[i])
+    else
+    console.log(i + '. ['+done+' ]' +''+ listOFTasks[i])
+
+  }
+
+}// end of uncheck function
+
+
+
+
+
+
+
 
 
 // The following line starts the application
