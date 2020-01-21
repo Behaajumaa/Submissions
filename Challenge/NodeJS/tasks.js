@@ -103,19 +103,25 @@ function quit() {
  *its return what commands you can inter 
  * @returns {string}
  */
+let listOFTasks = ["exit", "quit", "help", "hello", "list","add","remove","edit", "hello and any string after it "];
+let undone = '';  let done = '✓';
+
+
 
 function help() {
-  console.log(' \n\nYou can inter these commands \n  exit\n  quit\n  help \n  hello or any text start with hello word ')
+  console.log(' \n\nYou can inter these commands \n')
+
+  for (let i = 1; i < listOFTasks.length; i++)
+  console.log(i + '. [ '+done+' ]' +''+ listOFTasks[i])
 }
 
 // list function list all tasks in the App
-let listOFTasks = ["exit", "quit", "help", "hello", "list", "hello and any string after it "];
-
 function list() {
   console.log("\nThe list of tasks you can use them in this App are:")
 
   for (let i = 1; i < listOFTasks.length; i++)
-    console.log(i + '.' + listOFTasks[i])
+  console.log(i + '. [ '+done+' ]' +''+ listOFTasks[i])
+
 }
 // add function add   a new task into the list of tasks and display the new list 
 function add(x) {
@@ -125,7 +131,7 @@ function add(x) {
     listOFTasks.push(x);
     console.log("\nThe list of tasks after add " + x + "is:")
     for (let i = 1; i < listOFTasks.length; i++)
-      console.log(i + '.' + listOFTasks[i])
+    console.log(i + '. [ '+done+' ]' +''+ listOFTasks[i])
   }
 
 }
@@ -135,14 +141,14 @@ function remove(x) {
 
   console.log("\nThe list of tasks before remove is:")
   for (let i = 0; i < listOFTasks.length; i++) {
-    console.log(i+1 + '.' + listOFTasks[i])
+    console.log(i + '. [ '+done+' ]' +''+ listOFTasks[i])
   }
 
  if (x == 0) {
     console.log(listOFTasks.pop());
     console.log("\nThe list of tasks after remove last emement is:")
     for (let i = 1; i < listOFTasks.length; i++)
-      console.log(i + '.' + listOFTasks[i])
+    console.log(i + '. [ '+done+' ]' +''+ listOFTasks[i])
   }
 
   else if (x<0 || x > listOFTasks.length){
@@ -153,8 +159,8 @@ function remove(x) {
         listOFTasks.splice(x-1, 1);
         console.log("\nThe list of tasks after remove emement by index is:")
         for (let i = 1; i < listOFTasks.length; i++)
-            console.log(i + '.' + listOFTasks[i])
-  }  
+        console.log(i + '. [ '+done+' ]' +''+ listOFTasks[i])
+      }  
 
 }// end of remove function
 
@@ -169,13 +175,13 @@ function edit(x) {
     listOFTasks[listOFTasks.length-1]="new text";
     console.log("\nThe list of tasks after add " + x + "is:")
     for (let i = 1; i < listOFTasks.length; i++)
-      console.log(i + '.' + listOFTasks[i])
+    console.log(i + '. [ '+done+' ]' +''+ listOFTasks[i])
   }
   else if (x == "1 new text" ) {
     listOFTasks[0]="new text";
     console.log("\nThe list of tasks after add " + x + "is:")
     for (let i = 1; i < listOFTasks.length; i++)
-      console.log(i + '.' + listOFTasks[i-1])
+    console.log(i + '. [ '+done+' ]' +''+ listOFTasks[i])
 
   }
 
