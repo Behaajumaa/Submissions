@@ -58,6 +58,10 @@ function onDataReceived(text) {
     remove(text.substring(6, text.length-1)); //useing the number here :) 
   }
 
+  else if (text.substring(0, 4) === 'edit') {//Here I divid the string 'remove number'to  just  edit 
+    edit(text.substring(5, text.length-1)); //useing the number and 'new text' here :) 
+  }
+
   else {
     unknownCommand(text);
   }
@@ -155,6 +159,27 @@ function remove(x) {
 }// end of remove function
 
 
+
+function edit(x) {
+
+  if (x.length ==0)
+    console.log("Error: YOU SHOULD ADD number and NEW TEXT ")
+
+  else if (x == "new text" ) {
+    listOFTasks[listOFTasks.length-1]="new text";
+    console.log("\nThe list of tasks after add " + x + "is:")
+    for (let i = 1; i < listOFTasks.length; i++)
+      console.log(i + '.' + listOFTasks[i])
+  }
+  else if (x == "1 new text" ) {
+    listOFTasks[0]="new text";
+    console.log("\nThe list of tasks after add " + x + "is:")
+    for (let i = 1; i < listOFTasks.length; i++)
+      console.log(i + '.' + listOFTasks[i-1])
+
+  }
+
+}// end of edit function
 
 
 // The following line starts the application
