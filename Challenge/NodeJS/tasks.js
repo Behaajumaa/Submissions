@@ -102,6 +102,13 @@ function hello(text) {
  */
 function quit() {
   console.log('Quitting now, goodbye!')
+ const jsonfile = JSON.stringify (listOFTasks)
+  try {
+    fs.writeFileSync('./database.json',jsonfile);
+  } catch(err) {
+    console.error(err);
+  }
+
   process.exit();
 }
 
@@ -115,20 +122,10 @@ function quit() {
 
 
 var fs = require("fs");
-  var fileContent = ["exit", "quit", "help", "hello", "list","add","remove","edit","check","uncheck","hello and any string after it "];
-
-fs.writeFile("./database.json",JSON.stringify( fileContent,null,4) ,(err) => {
-    if (err) {
-        console.error(err);
-        return;
-    };
-    console.log("File has been created");
-});
+  var listOFTasks = ["exit", "quit", "help", "hello", "list","add","remove","edit","check","uncheck","hello and any string after it "];
 
 
-let listOFTasks = ["exit", "quit", "help", "hello", "list","add","remove","edit","check","uncheck", "hello and any string after it "];
 
-let data = JSON.stringify(listOFTasks);
 
 let undone = '';  let done = '✓';
 
