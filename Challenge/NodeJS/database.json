@@ -1,0 +1,13 @@
+[
+    "exit",
+    "quit",
+    "help",
+    "hello",
+    "list",
+    "add",
+    "remove",
+    "edit",
+    "check",
+    "uncheck",
+    "hello and any string after it "
+]

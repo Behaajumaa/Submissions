@@ -109,8 +109,27 @@ function quit() {
  * Help the application
  *its return what commands you can inter 
  * @returns {string}
+ * 
+ * 
  */ 
+
+
+var fs = require("fs");
+  var fileContent = ["exit", "quit", "help", "hello", "list","add","remove","edit","check","uncheck","hello and any string after it "];
+
+fs.writeFile("./database.json",JSON.stringify( fileContent,null,4) ,(err) => {
+    if (err) {
+        console.error(err);
+        return;
+    };
+    console.log("File has been created");
+});
+
+
 let listOFTasks = ["exit", "quit", "help", "hello", "list","add","remove","edit","check","uncheck", "hello and any string after it "];
+
+let data = JSON.stringify(listOFTasks);
+
 let undone = '';  let done = '✓';
 
 
