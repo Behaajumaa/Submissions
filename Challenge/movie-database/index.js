@@ -1,14 +1,10 @@
-const http = require('http');
-const port =3001;
-
-// Create an instance of the http server to handle HTTP requests
-let app = http.createServer((req, res) => {
-    // Set a response type of plain text for the response
-    res.writeHead(200, {'Content-Type': 'text/plain'});
-
-    // Send back a response and end the connection
-    res.end('Hello World!\n');
+const express = require("express");
+const app = express();
+const port = "3034";
+//routes
+app.get("/", (req, res) => {
+  res.send("Hello World from Oussama");
 });
-app.listen(port,()=>{
-console.log('Node server running on port' +port);
-});
+app.listen(port, () => {
+    console.log(`server is running at: http://localhost:${port}/`);
+  });
