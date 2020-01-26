@@ -1,12 +1,13 @@
 body{
     margin : 0;
+    background-image: linear-gradient(to right, rgba(255,0,0,0), rgb(132, 245, 211));
+
 }
 
 header{
     padding-top: 2%;  
     height: 12vh;
-    background-color: #ffffff;
-
+   
 }
 nav {
 
@@ -38,30 +39,20 @@ a:link {
         text-decoration: none;      /* make linke without underline   */
 }
 .SizeOfSecations{
-    height: 42vh;
+    height: 30vh;
     display: flex;
+    margin-bottom: 3%;
+
 }
 .divInsideSections{
-    width:25%;
+    width:21%;
     text-align: center;
-}
-.part1{
-    background-color: rgb(151, 199, 157);
-}
-.part2{
-    background-color: rgb(219, 119, 203);
-}.part3{
-    background-color: rgb(154, 115, 190);
-}.part4{
-    background-color: rgb(200, 46, 167);
-}.part5{
-    background-color: rgb(219, 162, 3);
-}.part6{
-    background-color: rgb(122, 156, 187);
-}.part7{
-    background-color: rgb(240, 134, 134);
-}.part8{
-    background-color: rgb(200, 192, 116);
+    border-radius: 10px;
+    border:  rgb(216, 208, 208) solid ;
+    margin-left: 1%;
+    padding: 1%;
+
+
 }
 
 
