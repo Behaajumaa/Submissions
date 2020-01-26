@@ -1,25 +1,22 @@
 body {
-    background-image: url("/Home/images/pic3.png") ;
-    background-repeat: no-repeat;
-    background-size: 100vh;
-    background-size: 100vw;
-
     margin: 0px; 
-    margin :0;
-    /* height: 80vh; */
+    background-image: url( "/Home/images/pic33.png");  background-size: 100% 100%;
+    background-repeat: no-repeat;
+    ;
+    /* <img src="/Home/images/pic3.png" alt="" width=99%; height="100%">   */
+
 }
 .mainContainer{
     display:flex;
+}
+
+header{
+    margin-top: 2%;  
+    height: 12vh;;
 
 }
-header{
-    height: 100px;
-    display: flex;
-} 
-.navicarion{
-    margin-top: 2%;  
-}
 nav {
+
     align-self: flex-end;
     height: 50px;
     display: flex;
@@ -45,10 +42,9 @@ a:link {
 }
 
 .med{
-
     width:70%;
-    /* height: 200px; */
-    color:white;
+    height: 84vh;
+
 }
 
 .navbar a:hover {
@@ -58,7 +54,6 @@ a:link {
 
 .sideScroll{
     width: 30%;
-    height: 300px;
     color:rgb(0, 0, 0);  
 }
 
@@ -67,24 +62,47 @@ a:link {
     color: #fe0000;
     text-shadow: 2px -4px 3px rgb(16, 6, 6);    }
 .paragraph{
-    height: 400px;
     color:rgb(0, 0, 0);
     border-right: 30px ridge rgb(172, 0, 0);
     border-radius: 0px 40px 0px 0px;
     padding:1%;
+    height: 600px;   
     overflow: scroll;
-  
+    font-size: 22px;
+
+
+}
+
+@media  screen and   (max-width: 720px)  {
+
+
+.navItem {
+        font-size: 12px;
+        height: 33px;
+}
+
+body {
+    background-image: url( "/Home/images/pic33.png");  background-size: 100% 50%;
+    background-repeat: no-repeat;
+    ;
+    /* <img src="/Home/images/pic3.png" alt="" width=99%; height="100%">   */
+
+}
+.med{
+    width:  100%;
+    height: 620px;
    
 }
 
-
-
-/* footer{
-background-color: #070202;
-width: 100%;
-height:85px;
-border: rgb(255, 255, 255) 2.5px solid;
+.sideScroll{
+    width: 100%;
 }
-img{
-    width:100%;
-} */
+
+.mainContainer{
+flex-direction: column;
+display: block;
+}
+
+
+
+}
