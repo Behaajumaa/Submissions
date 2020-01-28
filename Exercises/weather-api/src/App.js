@@ -57,6 +57,7 @@ class App extends Component {
     const data = await response.json();
 
     console.log(data);
+
     if (data.cod === "200") {
 
       this.setState({
